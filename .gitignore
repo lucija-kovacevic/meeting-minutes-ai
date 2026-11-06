@@ -1,0 +1,16 @@
+# osobni podaci - NIKAD na GitHub
+Sastanci/
+postavke.json
+rjecnik.txt
+*.wav
+*.mp3
+*.m4a
+*.mp4
+
+# preuzimaju se instalacijom
+modeli/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
