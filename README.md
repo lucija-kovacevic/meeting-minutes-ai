@@ -16,13 +16,19 @@ Works with any meeting app (Teams, Zoom, Google Meet…) — **no bot joins the 
 - Windows 10/11
 - Python 3.10+ ([python.org](https://www.python.org/downloads/), tick *Add python.exe to PATH*)
 - ~2 GB disk (Whisper model downloads on first use)
-- Optional, for automatic minutes: [Claude Code](https://claude.com/claude-code) or the Claude desktop app
+- Optional, for automatic minutes: a Claude account plus [Claude Code](https://claude.com/claude-code) **or** the Claude desktop app (open its **Code** tab at least once so Claude Code gets downloaded). Without it you still get the transcript.
 
 ## Install
 1. Download this repo (**Code → Download ZIP**) and unzip it anywhere
 2. Double-click **`instaliraj.bat`** and enter your name when asked
 
 This creates a virtual environment in `%USERPROFILE%\.meeting-minutes-ai`, downloads the speaker models, and installs the Claude skill `zapisnik`.
+
+### About the Claude skill
+- **You don't need to download it separately** — `instaliraj.bat` fills in your name and paths and installs it to `%USERPROFILE%\.claude\skills\zapisnik`.
+- It works in **Claude Code** (and the **Code** tab of the Claude desktop app). That's what the automatic minutes use.
+- In the regular Claude chat (claude.ai) personal skills are not picked up automatically. If you want to ask for minutes there too, zip the folder `%USERPROFILE%\.claude\skills\zapisnik` and upload it under *Settings → Capabilities → Skills*.
+- Minutes use your own Claude account and quota.
 
 ## Use
 1. At the start of a meeting double-click **`Snimi (HR).bat`**, **`Snimi (EN).bat`** or **`Snimi (automatski jezik).bat`**
@@ -56,6 +62,8 @@ Lokalni, besplatni alat za snimanje i transkripciju sastanaka na **Windowsima** 
 **Korištenje:** na početku sastanka dvoklik na **`Snimi (HR).bat`** / **`Snimi (EN).bat`** → na kraju **Enter** → upiši partnera i temu (ili Enter) → nastavi raditi (obrada ide u pozadini na pola procesora, pa laptop ne usporava; traje otprilike 1–2× trajanja sastanka). Zapisnik se sprema u `Sastanci\<DATUM>_<PARTNER>_<Tema>\` i otvara se sam.
 
 Možeš i ručno u Claudeu: *„napravi zapisnik od zadnjeg sastanka"*.
+
+**Claude i skill:** za automatski zapisnik treba Claude račun i Claude Code ili Claude desktop aplikacija (barem jednom otvori karticu **Code**). Skill `zapisnik` **ne treba posebno skidati**, jer ga `instaliraj.bat` sam postavi s tvojim imenom. Radi u Claude Codeu, odnosno kartici Code. Ako ga želiš i u običnom Claude chatu, zipaj mapu `%USERPROFILE%\.claude\skills\zapisnik` i učitaj je u *Settings → Capabilities → Skills*. Zapisnici troše tvoju Claude kvotu.
 
 **Napomena:** obavezno reci sudionicima da snimaš (GDPR).
 
